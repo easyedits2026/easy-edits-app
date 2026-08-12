@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Easy Edits - Free PDF & Document Tools</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    height: 72px;
+    background: rgba(255,255,255,0.96);
+    border-bottom: 1px solid #e2e8f0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo span {
+    color: #2563eb;
+}
+
+.tagline {
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+    padding: 70px 20px 55px;
+    background:
+        radial-gradient(circle at top left,
+        rgba(37,99,235,0.12),
+        transparent 35%),
+        linear-gradient(180deg,#eff6ff 0%,#f8fafc 100%);
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: white;
+    color: #2563eb;
+    padding: 9px 16px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 700;
+    border: 1px solid #dbeafe;
+    box-shadow: 0 6px 20px rgba(37,99,235,0.08);
+}
+
+h1 {
+    font-size: 56px;
+    line-height: 1.1;
+    margin: 20px 0 14px;
+    letter-spacing: -1.5px;
+}
+
+h1 span {
+    color: #2563eb;
+}
+
+.hero p {
+    max-width: 650px;
+    margin: auto;
+    color: #64748b;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   CONTAINER
+========================= */
+
+.container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 45px 20px 80px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.section-title h2 {
+    margin: 0 0 8px;
+    font-size: 28px;
+}
+
+.section-title p {
+    margin: 0;
+    color: #64748b;
+    font-size: 14px;
+}
+
+
+/* =========================
+   TOOLS GRID
+========================= */
+
+.tools {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+
+/* =========================
+   CARD
+========================= */
+
+.card {
+    background: white;
+    border-radius: 22px;
+    padding: 28px 22px 25px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 10px 35px rgba(15,23,42,0.06);
+    text-align: center;
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    border-color: #bfdbfe;
+    box-shadow: 0 18px 45px rgba(37,99,235,0.12);
+}
+
+.icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 17px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #eff6ff;
+    font-size: 35px;
+}
+
+.card h2 {
+    font-size: 20px;
+    margin: 0 0 9px;
+}
+
+.card p {
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.55;
+    min-height: 44px;
+    margin: 0;
+}
+
+
+/* =========================
+   UPLOAD BOX
+========================= */
+
+.upload-box {
+    margin-top: 22px;
+    border: 2px dashed #bfdbfe;
+    background: #f8fbff;
+    border-radius: 16px;
+    padding: 19px 12px;
+    transition: 0.2s ease;
+}
+
+.upload-box:hover {
+    background: #eff6ff;
+    border-color: #60a5fa;
+}
+
+input[type="file"] {
+    width: 100%;
+    margin: 3px 0 15px;
+    font-size: 12px;
+    color: #475569;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    width: 100%;
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 12px 17px;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.2s ease;
+    box-shadow: 0 7px 18px rgba(37,99,235,0.20);
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(37,99,235,0.28);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   NOTE
+========================= */
+
+.note {
+    color: #94a3b8;
+    font-size: 11px;
+    margin-top: 14px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    background: #0f172a;
+    color: #94a3b8;
+    text-align: center;
+    padding: 30px 20px;
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.footer strong {
+    color: white;
+    font-size: 16px;
+}
+
+
+/* =========================
+   RESPONSIVE TABLET
+========================= */
+
+@media(max-width: 950px) {
+
+    .tools {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+/* =========================
+   RESPONSIVE MOBILE
+========================= */
+
+@media(max-width: 650px) {
+
+    .navbar {
+        height: 64px;
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 22px;
+    }
+
+    .tagline {
+        display: none;
+    }
+
+    .hero {
+        padding: 52px 18px 42px;
+    }
+
+    h1 {
+        font-size: 40px;
+        letter-spacing: -1px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 32px 15px 60px;
+    }
+
+    .section-title h2 {
+        font-size: 24px;
+    }
+
+    .tools {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .card {
+        padding: 25px 18px 22px;
+    }
+
+    .icon {
+        width: 64px;
+        height: 64px;
+        font-size: 32px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media(max-width: 380px) {
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .hero {
+        padding-top: 42px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        Easy<span>Edits</span>
+    </div>
+
+    <div class="tagline">
+        Edit · Convert · Done.
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero">
+
+    <div class="badge">
+        ⚡ Simple & Powerful Document Tools
+    </div>
+
+    <h1>
+        Easy <span>Edits</span>
+    </h1>
+
+    <p>
+        Convert, merge, compress and manage your documents
+        quickly and easily.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     TOOLS
+========================= -->
+
+<div class="container">
+
+    <div class="section-title">
+
+        <h2>
+            Choose a Tool
+        </h2>
+
+        <p>
+            Select a document tool to get started.
+        </p>
+
+    </div>
+
+
+    <div class="tools">
+
+
+        <!-- =====================
+             IMAGE TO PDF
+        ====================== -->
+
+        <div class="card">
+
+            <div class="icon">
+                🖼️
+            </div>
+
+            <h2>
+                Image → PDF
+            </h2>
+
+            <p>
+                Convert JPG and PNG images into
+                a single PDF document.
+            </p>
+
+            <form
+                action="/image-to-pdf"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <div class="upload-box">
+
+                    <input
+                        type="file"
+                        name="files"
+                        accept=".jpg,.jpeg,.png"
+                        multiple
+                        required
+                    >
+
+                    <button type="submit">
+                        Convert to PDF
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="note">
+                JPG · JPEG · PNG
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================
+             PDF TO JPG
+        ====================== -->
+
+        <div class="card">
+
+            <div class="icon">
+                📄
+            </div>
+
+            <h2>
+                PDF → JPG
+            </h2>
+
+            <p>
+                Convert every PDF page into
+                high-quality JPG images.
+            </p>
+
+            <form
+                action="/pdf-to-jpg"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <div class="upload-box">
+
+                    <input
+                        type="file"
+                        name="file"
+                        accept=".pdf"
+                        required
+                    >
+
+                    <button type="submit">
+                        Convert to JPG
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="note">
+                PDF files only
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================
+             MERGE PDF
+        ====================== -->
+
+        <div class="card">
+
+            <div class="icon">
+                🔗
+            </div>
+
+            <h2>
+                Merge PDF
+            </h2>
+
+            <p>
+                Combine multiple PDF files into
+                one organized document.
+            </p>
+
+            <form
+                action="/merge-pdf"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <div class="upload-box">
+
+                    <input
+                        type="file"
+                        name="files"
+                        accept=".pdf"
+                        multiple
+                        required
+                    >
+
+                    <button type="submit">
+                        Merge PDFs
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="note">
+                Select 2 or more PDFs
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================
+             COMPRESS PDF
+        ====================== -->
+
+        <div class="card">
+
+            <div class="icon">
+                🗜️
+            </div>
+
+            <h2>
+                Compress PDF
+            </h2>
+
+            <p>
+                Reduce PDF file size while
+                keeping your document usable.
+            </p>
+
+            <form
+                action="/compress-pdf"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <div class="upload-box">
+
+                    <input
+                        type="file"
+                        name="file"
+                        accept=".pdf"
+                        required
+                    >
+
+                    <button type="submit">
+                        Compress PDF
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="note">
+                PDF files only
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================
+             PDF TO WORD
+        ====================== -->
+
+        <div class="card">
+
+            <div class="icon">
+                📝
+            </div>
+
+            <h2>
+                PDF → Word
+            </h2>
+
+            <p>
+                Convert PDF text into an
+                editable Word document.
+            </p>
+
+            <form
+                action="/pdf-to-word"
+                method="POST"
+                enctype="multipart/form-data"
+            >
+
+                <div class="upload-box">
+
+                    <input
+                        type="file"
+                        name="file"
+                        accept=".pdf"
+                        required
+                    >
+
+                    <button type="submit">
+                        Convert to Word
+                    </button>
+
+                </div>
+
+            </form>
+
+            <div class="note">
+                PDF → DOCX
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <strong>
+        Easy Edits
+    </strong>
+
+    <br>
+
+    Edit · Convert · Done.
+
+    <br>
+
+    © 2026 Easy Edits
+
+</footer>
+
+<!-- =========================
+     PROCESSING OVERLAY
+========================= -->
+
+<div id="processingOverlay">
+
+    <div class="processing-box">
+
+        <div class="loader"></div>
+
+        <h3 id="processingTitle">
+            Processing your file...
+        </h3>
+
+        <p id="processingMessage">
+            Please wait. Do not close this page.
+        </p>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ERROR MESSAGE
+========================= -->
+
+<div id="errorBox">
+
+    <div class="error-content">
+
+        <div class="error-icon">
+            ⚠️
+        </div>
+
+        <div>
+            <strong id="errorTitle">
+                Something went wrong
+            </strong>
+
+            <p id="errorMessage">
+                Please try again.
+            </p>
+        </div>
+
+        <button
+            type="button"
+            onclick="closeError()"
+            class="error-close"
+        >
+            ×
+        </button>
+
+    </div>
+
+</div>
+
+
+<style>
+
+/* PROCESSING OVERLAY */
+
+#processingOverlay {
+
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(15,23,42,0.65);
+
+    backdrop-filter: blur(5px);
+
+    z-index: 9999;
+
+    align-items: center;
+
+    justify-content: center;
+
+}
+
+
+/* PROCESSING BOX */
+
+.processing-box {
+
+    width: min(90%, 380px);
+
+    background: white;
+
+    border-radius: 22px;
+
+    padding: 35px 25px;
+
+    text-align: center;
+
+    box-shadow: 0 25px 70px rgba(0,0,0,0.25);
+
+}
+
+
+.processing-box h3 {
+
+    margin: 20px 0 8px;
+
+    font-size: 20px;
+
+    color: #0f172a;
+
+}
+
+
+.processing-box p {
+
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+
+}
+
+
+/* LOADER */
+
+.loader {
+
+    width: 48px;
+
+    height: 48px;
+
+    margin: auto;
+
+    border: 5px solid #dbeafe;
+
+    border-top-color: #2563eb;
+
+    border-radius: 50%;
+
+    animation: spin 0.8s linear infinite;
+
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* ERROR BOX */
+
+#errorBox {
+
+    display: none;
+
+    position: fixed;
+
+    left: 50%;
+
+    bottom: 25px;
+
+    transform: translateX(-50%);
+
+    width: min(92%, 520px);
+
+    z-index: 10000;
+
+}
+
+
+.error-content {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    background: white;
+
+    border-left: 5px solid #ef4444;
+
+    border-radius: 14px;
+
+    padding: 16px;
+
+    box-shadow: 0 15px 45px rgba(15,23,42,0.18);
+
+}
+
+
+.error-icon {
+
+    font-size: 27px;
+
+}
+
+
+.error-content strong {
+
+    color: #991b1b;
+
+    font-size: 14px;
+
+}
+
+
+.error-content p {
+
+    margin: 4px 0 0;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    line-height: 1.4;
+
+}
+
+
+.error-close {
+
+    width: auto;
+
+    margin-left: auto;
+
+    padding: 4px 10px;
+
+    background: transparent;
+
+    color: #64748b;
+
+    box-shadow: none;
+
+    font-size: 22px;
+
+}
+
+
+.error-close:hover {
+
+    background: #f1f5f9;
+
+    color: #111827;
+
+    transform: none;
+
+}
+
+
+/* MOBILE */
+
+@media(max-width:600px) {
+
+    .processing-box {
+
+        padding: 30px 20px;
+
+    }
+
+    #errorBox {
+
+        bottom: 15px;
+
+    }
+
+}
+
+</style>
+
+
+<script>
+
+/* =========================
+   EASY EDITS PROCESSING
+========================= */
+
+const processingOverlay =
+    document.getElementById("processingOverlay");
+
+const processingTitle =
+    document.getElementById("processingTitle");
+
+const processingMessage =
+    document.getElementById("processingMessage");
+
+const errorBox =
+    document.getElementById("errorBox");
+
+const errorTitle =
+    document.getElementById("errorTitle");
+
+const errorMessage =
+    document.getElementById("errorMessage");
+
+
+/* SHOW PROCESSING */
+
+function showProcessing(title, message) {
+
+    processingTitle.textContent =
+        title || "Processing your file...";
+
+    processingMessage.textContent =
+        message || "Please wait. Do not close this page.";
+
+    processingOverlay.style.display = "flex";
+
+}
+
+
+/* HIDE PROCESSING */
+
+function hideProcessing() {
+
+    processingOverlay.style.display = "none";
+
+}
+
+
+/* SHOW ERROR */
+
+function showError(title, message) {
+
+    hideProcessing();
+
+    errorTitle.textContent =
+        title || "Something went wrong";
+
+    errorMessage.textContent =
+        message || "Please try again.";
+
+    errorBox.style.display = "block";
+
+    setTimeout(function() {
+
+        closeError();
+
+    }, 7000);
+
+}
+
+
+/* CLOSE ERROR */
+
+function closeError() {
+
+    errorBox.style.display = "none";
+
+}
+
+
+/* =========================
+   FORM HANDLER
+========================= */
+
+document.querySelectorAll("form").forEach(function(form) {
+
+    form.addEventListener("submit", async function(event) {
+
+        event.preventDefault();
+
+        const button =
+            form.querySelector("button[type='submit']");
+
+        const fileInputs =
+            form.querySelectorAll("input[type='file']");
+
+
+        /* CHECK FILE */
+
+        let hasFile = false;
+
+        fileInputs.forEach(function(input) {
+
+            if (input.files.length > 0) {
+                hasFile = true;
+            }
+
+        });
+
+
+        if (!hasFile) {
+
+            showError(
+                "No file selected",
+                "Please select a file before continuing."
+            );
+
+            return;
+
+        }
+
+
+        /* MERGE PDF CHECK */
+
+        const action =
+            form.getAttribute("action");
+
+        if (action === "/merge-pdf") {
+
+            const input =
+                form.querySelector("input[type='file']");
+
+            if (input.files.length < 2) {
+
+                showError(
+                    "Not enough PDF files",
+                    "Please select at least 2 PDF files to merge."
+                );
+
+                return;
+
+            }
+
+        }
+
+
+        /* DISABLE BUTTON */
+
+        if (button) {
+
+            button.disabled = true;
+
+            button.dataset.originalText =
+                button.textContent;
+
+            button.textContent =
+                "Processing...";
+
+        }
+
+
+        /* SHOW LOADING */
+
+        let title =
+            "Processing your file...";
+
+        let message =
+            "Please wait while Easy Edits processes your document.";
+
+
+        if (action === "/image-to-pdf") {
+
+            title = "Creating PDF...";
+
+            message =
+                "Converting your images into a PDF.";
+
+        }
+
+        else if (action === "/pdf-to-jpg") {
+
+            title = "Converting PDF...";
+
+            message =
+                "Converting PDF pages into JPG images.";
+
+        }
+
+        else if (action === "/merge-pdf") {
+
+            title = "Merging PDFs...";
+
+            message =
+                "Combining your PDF files into one document.";
+
+        }
+
+        else if (action === "/compress-pdf") {
+
+            title = "Compressing PDF...";
+
+            message =
+                "Reducing the PDF file size.";
+
+        }
+
+        else if (action === "/pdf-to-word") {
+
+            title = "Creating Word file...";
+
+            message =
+                "Converting your PDF into an editable Word document.";
+
+        }
+
+
+        showProcessing(title, message);
+
+
+        try {
+
+            const formData =
+                new FormData(form);
+
+
+            const response =
+                await fetch(action, {
+
+                    method: "POST",
+
+                    body: formData
+
+                });
+
+
+            const contentType =
+                response.headers.get("content-type") || "";
+
+
+            /* SERVER ERROR */
+
+            if (!response.ok) {
+
+                const errorText =
+                    await response.text();
+
+                showError(
+                    "Conversion failed",
+                    errorText || "The server could not process your file."
+                );
+
+                resetButton();
+
+                return;
+
+            }
+
+
+            /* TEXT ERROR FROM SERVER */
+
+            if (
+                contentType.includes("text/html") ||
+                contentType.includes("text/plain")
+            ) {
+
+                const text =
+                    await response.text();
+
+                showError(
+                    "Unable to process file",
+                    text || "Please check your file and try again."
+                );
+
+                resetButton();
+
+                return;
+
+            }
+
+
+            /* GET FILE */
+
+            const blob =
+                await response.blob();
+
+
+            if (!blob || blob.size === 0) {
+
+                showError(
+                    "Empty result",
+                    "The server returned an empty file."
+                );
+
+                resetButton();
+
+                return;
+
+            }
+
+
+            /* DOWNLOAD */
+
+            const url =
+                window.URL.createObjectURL(blob);
+
+            const link =
+                document.createElement("a");
+
+            link.href = url;
+
+
+            const disposition =
+                response.headers.get(
+                    "content-disposition"
+                );
+
+
+            let filename =
+                "Easy-Edits-Download";
+
+
+            if (disposition) {
+
+                const match =
+                    disposition.match(
+                        /filename="?([^"]+)"?/i
+                    );
+
+                if (match && match[1]) {
+
+                    filename =
+                        match[1];
+
+                }
+
+            }
+
+
+            link.download = filename;
+
+            document.body.appendChild(link);
+
+            link.click();
+
+            link.remove();
+
+            window.URL.revokeObjectURL(url);
+
+
+            /* SUCCESS */
+
+            hideProcessing();
+
+            resetButton();
+
+
+        }
+
+        catch (error) {
+
+            console.error(error);
+
+            showError(
+                "Connection error",
+                "Could not connect to Easy Edits. Please make sure the server is running."
+            );
+
+            resetButton();
+
+        }
+
+
+        function resetButton() {
+
+            if (button) {
+
+                button.disabled = false;
+
+                button.textContent =
+                    button.dataset.originalText ||
+                    "Convert";
+
+            }
+
+        }
+
+    });
+
+});
+
+</script>
+</body>
+
+</html>
